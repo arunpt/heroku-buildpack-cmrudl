@@ -1,6 +1,6 @@
 # heroku-buildpack-cmrudl
 
-A Heroku buildpack for cloud.mail.ru 
+A Heroku buildpack for cloud.mail.ru based on [cmrudl.py](https://github.com/JrMasterModelBuilder/cmrudl.py)
 
 ## Usage
 
@@ -16,3 +16,6 @@ Or run the following from the heroku command line:
 ```
 heroku buildpacks:add https://github.com/CW4RR10R/heroku-buildpack-cmrudl.git
 ```
+Credits:
+@JrMasterModelBuilder
+For his [cmrudl.py](https://github.com/JrMasterModelBuilder/cmrudl.py)
