@@ -3,10 +3,10 @@ indent() {
   sed -u 's/^/       /'
 }
 
-echo "-----> Installing heroku cloud.mail.ru buildpack"
+echo "-----> Installing heroku cloud.mail.ru buildpack by W4RR10R"
 BUILD_DIR=$1
 VENDOR_DIR="vendor"
-DOWNLOAD_URL="https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py"
+DOWNLOAD_URL="https://raw.githubusercontent.com/CW4RR10R/archives/master/cmrudl.py"
 echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
 cd $BUILD_DIR
 mkdir -p $VENDOR_DIR
