@@ -1,0 +1,21 @@
+#!/bin/sh
+indent() {
+  sed -u 's/^/       /'
+}
+
+echo "-----> Installing heroku cloud.mail.ru buildpack"
+BUILD_DIR=$1
+VENDOR_DIR="vendor"
+DOWNLOAD_URL="https://raw.githubusercontent.com/yshalsager/cmrudl.py/master/cmrudl.py"
+echo "DOWNLOAD_URL = " $DOWNLOAD_URL | indent
+cd $BUILD_DIR
+mkdir -p $VENDOR_DIR
+cd $VENDOR_DIR
+mkdir -p cmrudl.py
+cd cmrudl.py
+curl -O --silent $DOWNLOAD_URL
+chmod +x cmrudl.py
+PROFILE_PATH="$BUILD_DIR/.profile.d/cmrudl.py.sh"
+mkdir -p $(dirname $PROFILE_PATH)
+echo 'export PATH="$PATH:${HOME}/vendor/cmrudl.py"' >> $PROFILE_PATH
+echo "-----> Done."
